@@ -1,0 +1,45 @@
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent; /* FIX */
+}
+
+// :host {
+//   display: block;
+//   min-height: 100vh;
+
+//   background:
+//     url('/assets/images/landing-bg.png') center/cover no-repeat;
+
+//   background-color: #e6d7b9;
+// }
+
+.app-header {
+  text-align: center;
+  padding: 1.5rem;
+  background: #e3d3b3;
+  border-bottom: 2px solid #b2936d;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.app-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 2.5rem;
+  color: #4c392c;
+  margin: 0;
+}
+
+.app-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  background: #e3d3b3;
+  border-top: 2px solid #b2936d;
+  color: #4e3b2f;
+}

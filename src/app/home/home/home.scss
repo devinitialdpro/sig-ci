@@ -1,0 +1,151 @@
+/* ============================================================
+   MINI BAROQUE ORNAMENTAL TAB (SMALLER + CLASSICAL)
+   ============================================================ */
+
+/* Hilangkan crest */
+.royal-crest {
+  display: none !important;
+}
+
+/* Center menu */
+.tabs-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem !important;
+
+  padding: 1.8rem 2rem;
+
+  background: #f2e5ca;
+  border: 3px solid #a6895e;
+  border-radius: 10px;
+
+  box-shadow:
+    inset 0 0 8px rgba(0,0,0,0.15),
+    0 4px 14px rgba(0,0,0,0.25);
+}
+
+/* ===================== TAB (SMALL, CLASSIC) ===================== */
+
+.tab-item {
+  position: relative;
+  padding: 0.45rem 1.3rem;  /* MUCH SMALLER */
+  min-width: auto;
+
+  font-family: "Cinzel Decorative", serif;
+  font-size: 0.95rem;        /* SMALLER FONT */
+  letter-spacing: 0.3px;
+
+  background: #e9d9b8;       /* matte parchment */
+  color: #3a2718;
+
+  border: 2px solid #7d623f; /* bronze antique */
+  border-radius: 3px;        /* CLASSIC EDGE */
+
+  box-shadow:
+    inset 0 0 3px rgba(0,0,0,0.25),
+    0 2px 3px rgba(0,0,0,0.22);
+
+  text-decoration: none;
+  transition: 0.2s ease-out;
+}
+
+.tab-item:hover {
+  background: #f3e4c5;
+  transform: translateY(-3px);
+  box-shadow:
+    inset 0 0 4px rgba(0,0,0,0.28),
+    0 4px 6px rgba(0,0,0,0.28);
+}
+
+/* ===================== ACTIVE TAB ===================== */
+
+.active-tab {
+  background: #fff6dd;
+  border-color: #6a5133;
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    inset 0 0 4px rgba(0,0,0,0.30),
+    0 6px 9px rgba(0,0,0,0.35);
+}
+
+/* ===================== BAROQUE ORNAMENT (SMALL) ===================== */
+
+.tab-ornament {
+  position: absolute;
+  top: 50%;
+  width: 12px;         /* SMALLER */
+  height: 12px;        /* SMALLER */
+  transform: translateY(-50%);
+  background-size: cover;
+  opacity: 0.85;
+}
+
+.tab-ornament.left {
+  left: -9px;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23856542' d='M30 0C22 8 10 14 6 22c-4 10 4 18 12 22s16 5 20-3-3-16-10-20 6-12 12-18C34-3 30-1 30 0z'/%3E%3C/svg%3E");
+}
+
+.tab-ornament.right {
+  right: -9px;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23856542' d='M30 0c8 8 20 14 24 22 4 10-4 18-12 22s-16 5-20-3 3-16 10-20-6-12-12-18C26-3 30-1 30 0z'/%3E%3C/svg%3E");
+}
+
+:host {
+  display: block;
+  min-height: 100vh;
+
+  background:
+    url('/assets/images/home.png') center/cover no-repeat,
+    radial-gradient(circle, #f2e8d2, #d6c4a3);
+
+  background-attachment: fixed;
+}
+
+
+/* remove celestial/cosmic items */
+.tab-item::before,
+.tab-item::after,
+.active-tab::before,
+.active-tab::after,
+.tab-inner::after {
+  display: none !important;
+}
+
+
+.music-center-wrapper {
+  position: fixed;        /* agar selalu center meskipun scroll */
+  inset: 0;               /* shorthand: top:0; bottom:0; left:0; right:0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 3000;          /* di atas semua elemen */
+  pointer-events: auto;   /* penting! */
+}
+
+.music-center-btn {
+  background: #c4a269;
+  border: 3px solid #7b5e3d;
+  color: #fff;
+  padding: 1rem 2rem;
+
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.4rem;
+
+  border-radius: 12px;
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 18px rgba(0, 0, 0, 0.35),
+    inset 0 0 10px rgba(255, 245, 225, 0.5);
+
+  transition: 0.25s ease;
+}
+
+.music-center-btn:hover {
+  background: #d4b786;
+  transform: translateY(-3px);
+}

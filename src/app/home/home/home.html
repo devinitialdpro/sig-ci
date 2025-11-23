@@ -1,0 +1,102 @@
+
+<!-- BACKGROUND MUSIC -->
+<audio id="bg-music" loop preload="auto">
+  <source src="/assets/audio/music.mp3" type="audio/mpeg" />
+</audio>
+
+
+<!-- CENTER PLAY BUTTON -->
+<div class="music-center-wrapper">
+  <button class="music-center-btn" (click)="startMusicAndRedirect()">
+    ▶ Mulai,..
+  </button>
+</div>
+
+
+
+
+<!-- TABS WRAP -->
+<div class="tabs-wrap">
+
+  <!-- ROYAL CREST -->
+  <div class="royal-crest" aria-hidden="true">
+    <svg viewBox="0 0 160 120" preserveAspectRatio="xMidYMid meet" role="img">
+      <g transform="translate(0,6)">
+        <path fill="#d4ac67" d="M80 0 C95 12 130 10 146 36 C120 36 108 58 80 58 C52 58 40 36 14 36 C30 10 65 12 80 0Z"/>
+        <rect x="46" y="52" width="68" height="40" rx="6" fill="#b08a58" />
+        <text 
+          x="80" 
+          y="82" 
+          font-family='IM Fell English SC, serif' 
+          text-anchor="middle" 
+          font-size="12" 
+          fill="#fff6d9"
+        >
+          ARCHIVUM
+        </text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- TAB CONTAINER -->
+  <div class="tabs-container vintage-card">
+
+    <a
+      routerLink="background"
+      routerLinkActive="active-tab"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="tab-item"
+    >
+      <span class="tab-inner">Jejak Awal</span>
+      <span class="tab-ornament left"></span>
+      <span class="tab-ornament right"></span>
+    </a>
+
+    <a
+      routerLink="pendaftaran"
+      routerLinkActive="active-tab"
+      class="tab-item"
+    >
+      <span class="tab-inner">Gerbang Perjalanan</span>
+      <span class="tab-ornament left"></span>
+      <span class="tab-ornament right"></span>
+    </a>
+
+    <a
+      routerLink="timeline"
+      routerLinkActive="active-tab"
+      class="tab-item"
+    >
+      <span class="tab-inner">Alur Perjalanan</span>
+      <span class="tab-ornament left"></span>
+      <span class="tab-ornament right"></span>
+    </a>
+
+    <!-- COSMIC DUST -->
+    <div class="dust" style="top:10px; left:14%; animation-delay:0s;"></div>
+    <div class="dust" style="top:18px; left:42%; animation-delay:1.2s;"></div>
+    <div class="dust" style="top:8px; left:68%; animation-delay:0.6s;"></div>
+    <div class="dust" style="top:36px; left:84%; animation-delay:2s;"></div>
+
+  </div>
+</div>
+
+<!-- ROUTER OUTLET -->
+<router-outlet></router-outlet>
+
+<!-- MUSIC SCRIPT -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("bg-music");
+    const btn = document.getElementById("music-center-btn");
+    const wrap = document.getElementById("music-center-wrapper");
+
+    btn.addEventListener("click", () => {
+      audio.volume = 0.5;
+      audio.play();
+
+      // Hide button after music starts
+      wrap.style.display = "none";
+    });
+  });
+</script>

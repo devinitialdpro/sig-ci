@@ -1,0 +1,136 @@
+/* ============================================================
+   COSMIC ANTIQUE CONTENT STYLE (for background/pendaftaran/timeline)
+   ============================================================ */
+
+/* FONT SET (pastikan sudah di-import di styles.scss global):
+   Cinzel Decorative — untuk judul
+   Cormorant Garamond — untuk isi
+*/
+
+:host {
+  display: block;
+  background: #fcf7ee;
+  padding: 2.5rem;
+  border-radius: 14px;
+
+  /* subtle parchment shadow */
+  box-shadow:
+    0 6px 18px rgba(0,0,0,0.15),
+    inset 0 0 20px rgba(255,248,230,0.7);
+  
+  border: 2px solid rgba(160,130,90,0.4);
+  
+}
+
+/* ===== TITLE ===== */
+h2, h1 {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #4a3526;
+  margin-bottom: 1rem;
+
+  text-shadow:
+    0 1px 0 rgba(255,255,255,0.3),
+    0 3px 6px rgba(0,0,0,0.2);
+}
+
+/* Small dividing line */
+h2::after, h1::after {
+  content: "";
+  display: block;
+  margin-top: 0.4rem;
+  width: 160px;
+  height: 2px;
+  background: linear-gradient(
+      90deg,
+      rgba(150,110,70,0.8),
+      rgba(200,160,120,0.4),
+      rgba(150,110,70,0.8)
+  );
+}
+
+/* ===== TEXT BODY ===== */
+p, li, ul, ol {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #3e2b1e;
+}
+
+/* List spacing */
+ol, ul {
+  padding-left: 2rem;
+  margin-top: 1rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+/* optional lighten effect */
+p + p {
+  margin-top: 1rem;
+}
+
+/* ============================================================
+   VINTAGE BLOCK — CLEAN REFACTORED
+   ============================================================ */
+
+.vintage-block {
+  padding: 1.2rem 1.6rem;
+  margin-top: 1.6rem;
+
+  background: rgba(255, 248, 235, 0.85);
+  border-left: 3px solid #b08a58;
+
+  border-radius: 8px;
+  box-shadow:
+    inset 0 0 12px rgba(255, 250, 240, 0.8),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ============================================================
+   TIMELINE CARD WITH FULL BACKGROUND SCROLL
+   ============================================================ */
+
+.timeline-page .vintage-card {
+  position: relative;
+
+  /* gunakan contain agar gambar tampil utuh */
+  background: url('/assets/images/pendaftaran.png')
+              top center / contain
+              no-repeat !important;
+
+  /* fallback jika PNG transparan */
+  background-color: #fbf4e6;
+
+  /* memberi ruang agar gambar tidak tertutup teks */
+  padding: 4rem 3rem;
+
+  border-radius: 12px;
+  border: none;
+
+  /* konten tetap di atas background */
+  z-index: 2;
+
+  /* pastikan kartu cukup tinggi untuk menampilkan gambar sepenuhnya */
+  min-height: 1100px; /* sesuaikan nanti */
+}
+
+
+
+.vintage-link {
+  color: #4a3526;
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.3rem;
+
+  transition: 0.2s;
+}
+
+.vintage-link:hover {
+  color: #8c5e3c;
+  text-decoration: underline;
+}
