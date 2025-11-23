@@ -1,31 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========================
+   GLOBAL FONT IMPORTS
+   ========================= */
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Crimson+Pro:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;500;600&family=Spectral:wght@400;500&display=swap');
 
-body {
-  font-family: 'Cormorant Garamond', serif;
-}
-
-
-
+/* =========================
+   GLOBAL BODY STYLE
+   ========================= */
 body {
   background: #f4e8d0;
   font-family: 'Crimson Pro', serif;
   color: #4e3b2f;
+  margin: 0;
+  padding: 0;
 }
 
+
+/* =========================
+   VINTAGE CARD BASE STYLE
+   ========================= */
 .vintage-card {
   background: #fdf7ec;
   border: 2px solid #b2936d;
   padding: 1.5rem;
   border-radius: 8px;
+
   box-shadow: 0 0 15px rgba(80, 60, 45, 0.3);
 }
 
+/* =========================
+   VINTAGE TITLE
+   ========================= */
 .vintage-title {
   font-family: 'IM Fell English', serif;
   font-size: 2.2rem;
   padding-bottom: .5rem;
   border-bottom: 2px solid #b2936d;
   margin-bottom: 1rem;
+}
+
+
+/* ============================================================
+   RESPONSIVE FIX (MOBILE < 540px)
+   ============================================================ */
+@media (max-width: 540px) {
+
+  body {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .vintage-card {
+    padding: 1rem 1.2rem;
+    border-radius: 6px;
+  }
+
+  .vintage-title {
+    font-size: 1.5rem;
+    padding-bottom: .3rem;
+  }
+
+  .timeline-list,
+  .vintage-block {
+    font-size: 1rem;
+  }
+
+  /* Supaya layout tidak terlalu mepet */
+  .tabs-wrap {
+    padding: 0 1rem;
+  }
 }
