@@ -1,18 +1,40 @@
 /* ============================================================
-   MINI BAROQUE ORNAMENTAL TAB (SMALLER + CLASSICAL)
+   MINI BAROQUE ORNAMENTAL TAB
+   (DESKTOP FIRST + MOBILE SAFE)
    ============================================================ */
 
-/* Hilangkan crest */
+/* ============================================================
+   GLOBAL / HOST
+   ============================================================ */
+
+:host {
+  display: block;
+  min-height: 100vh;
+
+  background:
+    url('/assets/images/home.png') center/cover no-repeat,
+    radial-gradient(circle, #f2e8d2, #d6c4a3);
+
+  background-attachment: fixed;
+}
+
+/* ============================================================
+   REMOVE UNUSED ELEMENT
+   ============================================================ */
+
 .royal-crest {
   display: none !important;
 }
 
-/* Center menu */
+/* ============================================================
+   TABS CONTAINER
+   ============================================================ */
+
 .tabs-container {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 1rem !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 
   padding: 1.8rem 2rem;
 
@@ -21,63 +43,68 @@
   border-radius: 10px;
 
   box-shadow:
-    inset 0 0 8px rgba(0,0,0,0.15),
-    0 4px 14px rgba(0,0,0,0.25);
+    inset 0 0 8px rgba(0, 0, 0, 0.15),
+    0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* ===================== TAB (SMALL, CLASSIC) ===================== */
+/* ============================================================
+   TAB ITEM
+   ============================================================ */
 
 .tab-item {
   position: relative;
-  padding: 0.45rem 1.3rem;  /* MUCH SMALLER */
-  min-width: auto;
+  padding: 0.45rem 1.3rem;
 
   font-family: "Cinzel Decorative", serif;
-  font-size: 0.95rem;        /* SMALLER FONT */
+  font-size: 0.95rem;
   letter-spacing: 0.3px;
 
-  background: #e9d9b8;       /* matte parchment */
+  background: #e9d9b8;
   color: #3a2718;
 
-  border: 2px solid #7d623f; /* bronze antique */
-  border-radius: 3px;        /* CLASSIC EDGE */
+  border: 2px solid #7d623f;
+  border-radius: 3px;
 
   box-shadow:
-    inset 0 0 3px rgba(0,0,0,0.25),
-    0 2px 3px rgba(0,0,0,0.22);
+    inset 0 0 3px rgba(0, 0, 0, 0.25),
+    0 2px 3px rgba(0, 0, 0, 0.22);
 
   text-decoration: none;
-  transition: 0.2s ease-out;
+  transition: all 0.25s ease;
 }
 
 .tab-item:hover {
   background: #f3e4c5;
   transform: translateY(-3px);
+
   box-shadow:
-    inset 0 0 4px rgba(0,0,0,0.28),
-    0 4px 6px rgba(0,0,0,0.28);
+    inset 0 0 4px rgba(0, 0, 0, 0.28),
+    0 4px 6px rgba(0, 0, 0, 0.28);
 }
 
-/* ===================== ACTIVE TAB ===================== */
+/* ============================================================
+   ACTIVE TAB
+   ============================================================ */
 
 .active-tab {
   background: #fff6dd;
   border-color: #6a5133;
-
   transform: translateY(-5px);
 
   box-shadow:
-    inset 0 0 4px rgba(0,0,0,0.30),
-    0 6px 9px rgba(0,0,0,0.35);
+    inset 0 0 4px rgba(0, 0, 0, 0.3),
+    0 6px 9px rgba(0, 0, 0, 0.35);
 }
 
-/* ===================== BAROQUE ORNAMENT (SMALL) ===================== */
+/* ============================================================
+   BAROQUE ORNAMENT
+   ============================================================ */
 
 .tab-ornament {
   position: absolute;
   top: 50%;
-  width: 12px;         /* SMALLER */
-  height: 12px;        /* SMALLER */
+  width: 12px;
+  height: 12px;
   transform: translateY(-50%);
   background-size: cover;
   opacity: 0.85;
@@ -93,19 +120,10 @@
   background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23856542' d='M30 0c8 8 20 14 24 22 4 10-4 18-12 22s-16 5-20-3 3-16 10-20-6-12-12-18C26-3 30-1 30 0z'/%3E%3C/svg%3E");
 }
 
-:host {
-  display: block;
-  min-height: 100vh;
+/* ============================================================
+   REMOVE COSMIC EFFECTS
+   ============================================================ */
 
-  background:
-    url('/assets/images/home.png') center/cover no-repeat,
-    radial-gradient(circle, #f2e8d2, #d6c4a3);
-
-  background-attachment: fixed;
-}
-
-
-/* remove celestial/cosmic items */
 .tab-item::before,
 .tab-item::after,
 .active-tab::before,
@@ -114,24 +132,27 @@
   display: none !important;
 }
 
+/* ============================================================
+   MUSIC OVERLAY
+   ============================================================ */
 
 .music-center-wrapper {
-  position: fixed;        /* agar selalu center meskipun scroll */
-  inset: 0;               /* shorthand: top:0; bottom:0; left:0; right:0; */
+  position: fixed;
+  inset: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
 
-  z-index: 3000;          /* di atas semua elemen */
-  pointer-events: auto;   /* penting! */
+  z-index: 3000;
 }
 
 .music-center-btn {
   background: #c4a269;
   border: 3px solid #7b5e3d;
   color: #fff;
-  padding: 1rem 2rem;
 
+  padding: 1rem 2rem;
   font-family: "Cinzel Decorative", serif;
   font-size: 1.4rem;
 
@@ -142,10 +163,52 @@
     0 6px 18px rgba(0, 0, 0, 0.35),
     inset 0 0 10px rgba(255, 245, 225, 0.5);
 
-  transition: 0.25s ease;
+  transition: all 0.25s ease;
 }
 
 .music-center-btn:hover {
   background: #d4b786;
   transform: translateY(-3px);
+}
+
+/* ============================================================
+   MOBILE OVERRIDES (KEY FIX)
+   ============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Performance fix */
+  :host {
+    background-attachment: scroll;
+  }
+
+  /* Stack tabs */
+  .tabs-container {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1.2rem 1rem;
+  }
+
+  /* Full width tabs */
+  .tab-item {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  /* Remove ornaments */
+  .tab-ornament {
+    display: none !important;
+  }
+
+  /* Music button mobile */
+  .music-center-btn {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.4rem;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
 }
