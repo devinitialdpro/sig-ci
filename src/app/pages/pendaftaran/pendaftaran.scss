@@ -1,5 +1,6 @@
 /* ============================================================
-   COSMIC ANTIQUE — TIMELINE PAGE (FINAL IMAGE PATCH)
+   COSMIC ANTIQUE — TIMELINE / REGISTRATION PAGE
+   (DESKTOP FIRST + MOBILE SAFE)
    ============================================================ */
 
 /* ============================================================
@@ -32,10 +33,22 @@ li {
 }
 
 /* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
+
+.timeline-page {
+  display: flex;
+  justify-content: center;
+}
+
+/* ============================================================
    CARD CONTAINER
    ============================================================ */
 
 .timeline-page .vintage-card {
+  width: 100%;
+  max-width: 920px;
+
   background: #fbf4e6;
   border-radius: 12px;
   overflow: hidden;
@@ -46,15 +59,16 @@ li {
 }
 
 /* ============================================================
-   IMAGE (NATURAL SIZE & RESPONSIVE)
+   IMAGE — NATURAL SIZE (KEY FIX)
    ============================================================ */
 
 .timeline-image {
   display: block;
-  width: 100%;       /* mengikuti lebar container */
-  height: auto;      /* TINGGI ASLI — KUNCI UTAMA */
+  width: 100%;
+  height: auto;        /* JANGAN DIUBAH */
   max-width: 100%;
   object-fit: contain;
+
   background: #fbf4e6;
 }
 
@@ -76,7 +90,7 @@ li {
 }
 
 .timeline-list li {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.9rem;
 }
 
 /* ============================================================
@@ -89,7 +103,8 @@ li {
   font-weight: 600;
   color: #4a3526;
   text-decoration: none;
-  transition: 0.2s ease;
+
+  transition: color 0.2s ease;
 }
 
 .vintage-link:hover {
