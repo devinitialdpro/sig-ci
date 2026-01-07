@@ -1,11 +1,10 @@
 /* ============================================================
-   COSMIC ANTIQUE CONTENT STYLE (for background/pendaftaran/timeline)
+   COSMIC ANTIQUE — TIMELINE PAGE (FINAL IMAGE PATCH)
    ============================================================ */
 
-/* FONT SET (pastikan sudah di-import di styles.scss global):
-   Cinzel Decorative — untuk judul
-   Cormorant Garamond — untuk isi
-*/
+/* ============================================================
+   HOST (Angular Safe)
+   ============================================================ */
 
 :host {
   display: block;
@@ -13,124 +12,128 @@
   padding: 2.5rem;
   border-radius: 14px;
 
-  /* subtle parchment shadow */
+  border: 2px solid rgba(160, 130, 90, 0.4);
+
   box-shadow:
-    0 6px 18px rgba(0,0,0,0.15),
-    inset 0 0 20px rgba(255,248,230,0.7);
-  
-  border: 2px solid rgba(160,130,90,0.4);
-  
+    0 6px 18px rgba(0, 0, 0, 0.15),
+    inset 0 0 20px rgba(255, 248, 230, 0.7);
 }
 
-/* ===== TITLE ===== */
-h2, h1 {
-  font-family: "Cinzel Decorative", serif;
-  font-weight: 700;
-  font-size: 2.2rem;
-  color: #4a3526;
-  margin-bottom: 1rem;
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
 
-  text-shadow:
-    0 1px 0 rgba(255,255,255,0.3),
-    0 3px 6px rgba(0,0,0,0.2);
-}
-
-/* Small dividing line */
-h2::after, h1::after {
-  content: "";
-  display: block;
-  margin-top: 0.4rem;
-  width: 160px;
-  height: 2px;
-  background: linear-gradient(
-      90deg,
-      rgba(150,110,70,0.8),
-      rgba(200,160,120,0.4),
-      rgba(150,110,70,0.8)
-  );
-}
-
-/* ===== TEXT BODY ===== */
-p, li, ul, ol {
+p,
+li {
   font-family: "Cormorant Garamond", serif;
   font-size: 1.25rem;
-  line-height: 1;
+  line-height: 1.6;
   color: #3e2b1e;
 }
 
-/* List spacing */
-ol, ul {
-  padding-left: 2rem;
-  margin-top: 1rem;
-}
-
-li {
-  margin-bottom: 0.4rem;
-}
-
-/* optional lighten effect */
-p + p {
-  margin-top: 1rem;
-}
-
 /* ============================================================
-   VINTAGE BLOCK — CLEAN REFACTORED
-   ============================================================ */
-
-.vintage-block {
-  padding: 1.2rem 1.6rem;
-  margin-top: 1.6rem;
-
-  background: rgba(255, 248, 235, 0.85);
-  border-left: 3px solid #b08a58;
-
-  border-radius: 8px;
-  box-shadow:
-    inset 0 0 12px rgba(255, 250, 240, 0.8),
-    0 2px 8px rgba(0, 0, 0, 0.12);
-}
-
-
-/* ============================================================
-   TIMELINE CARD WITH FULL BACKGROUND SCROLL
+   CARD CONTAINER
    ============================================================ */
 
 .timeline-page .vintage-card {
-  position: relative;
-
-  /* gunakan contain agar gambar tampil utuh */
-  background: url('/assets/images/pendaftaran.png')
-              top center / contain
-              no-repeat !important;
-
-  /* fallback jika PNG transparan */
-  background-color: #fbf4e6;
-
-  /* memberi ruang agar gambar tidak tertutup teks */
-  padding: 4rem 3rem;
-
+  background: #fbf4e6;
   border-radius: 12px;
-  border: none;
+  overflow: hidden;
 
-  /* konten tetap di atas background */
-  z-index: 2;
-
-  /* pastikan kartu cukup tinggi untuk menampilkan gambar sepenuhnya */
-  min-height: 1100px; /* sesuaikan nanti */
+  box-shadow:
+    inset 0 0 12px rgba(255, 250, 240, 0.8),
+    0 4px 14px rgba(0, 0, 0, 0.18);
 }
 
+/* ============================================================
+   IMAGE (NATURAL SIZE & RESPONSIVE)
+   ============================================================ */
 
+.timeline-image {
+  display: block;
+  width: 100%;       /* mengikuti lebar container */
+  height: auto;      /* TINGGI ASLI — KUNCI UTAMA */
+  max-width: 100%;
+  object-fit: contain;
+  background: #fbf4e6;
+}
+
+/* ============================================================
+   CONTENT AFTER IMAGE
+   ============================================================ */
+
+.timeline-content {
+  padding: 3rem 3rem 3.5rem;
+}
+
+/* ============================================================
+   LIST
+   ============================================================ */
+
+.timeline-list {
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.timeline-list li {
+  margin-bottom: 0.8rem;
+}
+
+/* ============================================================
+   LINK STYLE
+   ============================================================ */
 
 .vintage-link {
-  color: #4a3526;
-  text-decoration: none;
   font-family: "Cormorant Garamond", serif;
   font-size: 1.3rem;
-
-  transition: 0.2s;
+  font-weight: 600;
+  color: #4a3526;
+  text-decoration: none;
+  transition: 0.2s ease;
 }
 
 .vintage-link:hover {
   color: #8c5e3c;
   text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLET
+   ============================================================ */
+
+@media (max-width: 768px) {
+  :host {
+    padding: 2rem 1.6rem;
+  }
+
+  .timeline-content {
+    padding: 2.2rem 2rem 2.6rem;
+  }
+
+  p,
+  li {
+    font-size: 1.15rem;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   ============================================================ */
+
+@media (max-width: 480px) {
+  :host {
+    padding: 1.5rem 1rem;
+  }
+
+  .timeline-content {
+    padding: 1.8rem 1.4rem 2.2rem;
+  }
+
+  .timeline-list {
+    padding-left: 1.4rem;
+  }
+
+  .vintage-link {
+    font-size: 1.1rem;
+  }
 }
