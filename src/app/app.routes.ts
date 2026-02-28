@@ -7,6 +7,7 @@ import { BackgroundComponent } from './pages/background/background';
 import { PendaftaranComponent } from './pages/pendaftaran/pendaftaran';
 import { TimelineComponent } from './pages/timeline/timeline';
 import { WayfarersComponent } from './pages/wayfarers/wayfarers';
+import { CommitteComponent } from './pages/committe/committe';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -19,6 +20,7 @@ export const routes: Routes = [
       { path: 'pendaftaran', component: PendaftaranComponent },
       { path: 'timeline', component: TimelineComponent },
       { path: 'wayfarers', component: WayfarersComponent },
+      { path: 'committe', component: CommitteComponent },
     ],
   },
 
