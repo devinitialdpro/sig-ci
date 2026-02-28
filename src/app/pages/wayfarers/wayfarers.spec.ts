@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TimelineComponent } from './timeline';
+import { WayfarersComponent } from './wayfarers';
 
-describe('Timeline', () => {
-  let component: TimelineComponent;
-  let fixture: ComponentFixture<TimelineComponent>;
+describe('WayfarersComponent', () => {
+  let component: WayfarersComponent;
+  let fixture: ComponentFixture<WayfarersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TimelineComponent]
+      imports: [WayfarersComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TimelineComponent);
+    fixture = TestBed.createComponent(WayfarersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

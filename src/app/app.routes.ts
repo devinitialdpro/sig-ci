@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home/home';
 import { BackgroundComponent } from './pages/background/background';
 import { PendaftaranComponent } from './pages/pendaftaran/pendaftaran';
 import { TimelineComponent } from './pages/timeline/timeline';
+import { WayfarersComponent } from './pages/wayfarers/wayfarers';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent },
@@ -17,6 +18,7 @@ export const routes: Routes = [
       { path: 'background', component: BackgroundComponent },
       { path: 'pendaftaran', component: PendaftaranComponent },
       { path: 'timeline', component: TimelineComponent },
+      { path: 'wayfarers', component: WayfarersComponent },
     ],
   },
 
